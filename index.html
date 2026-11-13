@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0f0c">
+<title>Строй Пласт — вёдра оптом и в розницу</title>
+<meta name="description" content="Строй Пласт: строительные, хозяйственные и ударопрочные вёдра 12 и 16 л. Сделано в России. Оптом и в розницу с доставкой.">
+<link rel="icon" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#22B20F; --green-d:#178a08; --green-l:#e8f7e4; --lime:#b8f04a;
+  --ink:#0d0f0c; --ink-2:#1b1e1a; --muted:#646b62; --line:#e4e7e2; --bg:#f5f6f3; --card:#fff;
+  --orange:#ff7a1a; --r:18px; --shadow:0 10px 30px -12px rgba(13,15,12,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Manrope,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer;color:inherit}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.display{font-family:Oswald,Impact,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top);background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;height:72px}
+.brand img{height:44px;width:auto}
+nav{display:flex;gap:22px;margin-left:8px}
+nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;transition:color .15s}
+nav a:hover{color:var(--ink)}
+.spacer{flex:1}
+.seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px;position:relative}
+.seg button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted);transition:.2s}
+.seg button.on{background:var(--ink);color:#fff}
+.seg button.on[data-mode=wholesale]{background:var(--green);color:#fff}
+.cart-btn{position:relative;border:0;background:var(--ink);color:#fff;border-radius:999px;height:44px;padding:0 18px 0 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+.cart-btn svg{width:20px;height:20px}
+.cart-btn .cnt{background:var(--green);color:#fff;min-width:22px;height:22px;border-radius:999px;font-size:12px;display:grid;place-items:center;padding:0 6px}
+.cart-btn.bump{animation:bump .4s}
+@keyframes bump{40%{transform:scale(1.08)}}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(1200px 500px at 85% 20%,rgba(34,178,15,.28),transparent 60%),var(--ink);color:#fff;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:90px;background:linear-gradient(transparent,rgba(0,0,0,.25))}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:84px;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#d5dcd2}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(34,178,15,.25)}
+.hero h1{font-size:clamp(42px,6.2vw,80px);margin:22px 0 18px;font-weight:700}
+.hero h1 span{color:var(--green)}
+.hero p.lead{font-size:18px;color:#c3cbc0;max-width:520px;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:15px 24px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.facts{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.facts div{font-size:13px;color:#9aa596}
+.facts b{display:block;font-family:Oswald,Impact,sans-serif;font-size:30px;color:#fff;font-weight:600;line-height:1.1}
+.collage{position:relative;height:500px}
+.collage figure{position:absolute;margin:0;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);border:4px solid rgba(255,255,255,.08)}
+.collage figure img{width:100%;height:100%;object-fit:cover}
+.collage .c1{width:58%;height:78%;left:0;top:6%;transform:rotate(-4deg);z-index:2}
+.collage .c2{width:48%;height:62%;right:0;top:0;transform:rotate(5deg)}
+.collage .c3{width:46%;height:56%;right:4%;bottom:0;transform:rotate(-2deg);z-index:3}
+.sticker{position:absolute;left:46%;bottom:6%;z-index:4;background:var(--green);color:#fff;border-radius:50%;width:124px;height:124px;display:grid;place-items:center;text-align:center;transform:rotate(-10deg);box-shadow:0 14px 30px -10px rgba(34,178,15,.8)}
+.sticker b{font-family:Oswald,Impact,sans-serif;font-size:34px;line-height:1;display:block}
+.sticker span{font-size:12px;font-weight:700;line-height:1.2}
+
+/* ---------- strip ---------- */
+.strip{background:#fff;border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:22px 24px}
+.strip div{display:flex;gap:12px;align-items:center;font-weight:700;font-size:15px}
+.strip svg{flex:0 0 40px;height:40px;padding:9px;border-radius:12px;background:var(--green-l);color:var(--green-d)}
+.strip small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+
+/* ---------- catalog ---------- */
+section{padding:72px 0 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.sec-head h2{font-size:clamp(34px,4.4vw,52px);margin:0;font-weight:700}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:560px}
+.mode-note{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:14px;font-weight:700;font-size:14px}
+.mode-note.retail{background:#fff;border:1px solid var(--line)}
+.mode-note.wholesale{background:var(--green-l);color:var(--green-d)}
+.mode-note button{border:0;background:var(--ink);color:#fff;border-radius:10px;padding:7px 12px;font-weight:700;font-size:13px}
+.mode-note.wholesale button{background:#fff;color:var(--ink)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px;color:var(--muted)}
+.filters button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.pic{position:relative;aspect-ratio:3/4;background:#eef0ec;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover;transition:opacity .25s,transform .5s}
+.card:hover .pic img{transform:scale(1.03)}
+.badge{align-self:flex-start;margin-bottom:-6px;background:var(--orange);color:#fff;font-weight:800;font-size:12px;padding:6px 10px;border-radius:8px;letter-spacing:.02em;text-transform:uppercase}
+.badge.alt{background:var(--green)}
+.body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+.body h3{margin:0;font-size:19px;line-height:1.25;font-weight:800}
+.body .desc{margin:0;color:var(--muted);font-size:14px}
+.feats{display:flex;gap:6px;flex-wrap:wrap}
+.feats span{font-size:12px;font-weight:700;background:var(--bg);border-radius:6px;padding:4px 8px;color:#454b43}
+.lbl{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.swatches{display:flex;gap:8px;align-items:center}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);padding:0}
+.sw.on{box-shadow:0 0 0 2px var(--ink)}
+.sw-name{font-size:14px;font-weight:600;margin-left:4px}
+.packs{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.pack{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:8px 6px;text-align:center;line-height:1.2}
+.pack b{display:block;font-size:15px}
+.pack small{color:var(--muted);font-size:11.5px;font-weight:600}
+.pack.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pack.on small{color:#b9c0b6}
+.pack .save{display:block;margin-top:3px;font-size:10.5px;font-weight:800;color:var(--green-d)}
+.pack.on .save{color:var(--lime)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tier{border:1.5px solid var(--line);border-radius:12px;padding:8px;text-align:center;line-height:1.25}
+.tier small{display:block;color:var(--muted);font-size:11.5px;font-weight:700}
+.tier b{font-size:16px}
+.tier.on{border-color:var(--green);background:var(--green-l)}
+.tier.on small{color:var(--green-d)}
+.foot{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.priceline{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.priceline .big{font-family:Oswald,Impact,sans-serif;font-size:32px;font-weight:600;line-height:1}
+.priceline .per{color:var(--muted);font-size:13px;font-weight:600}
+.buyrow{display:flex;gap:10px}
+.stepper{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.stepper button{border:0;background:transparent;width:38px;height:46px;font-size:20px;font-weight:600}
+.stepper button:hover{background:var(--bg)}
+.stepper input{width:58px;border:0;text-align:center;font:inherit;font-weight:800;font-size:15px;-moz-appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
+.add{flex:1;border:0;border-radius:12px;background:var(--green);color:#fff;font-weight:800;font-size:15px;height:49px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
+.add:hover{background:var(--green-d)}
+.hint{font-size:12.5px;color:var(--muted);margin-top:-4px}
+
+/* ---------- wholesale ---------- */
+.opt{background:var(--ink);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.opt:before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;background:var(--green);opacity:.18;border-radius:50%;filter:blur(20px)}
+.opt h2{font-size:clamp(34px,4vw,50px);margin:0 0 14px;font-weight:700}
+.opt h2 span{color:var(--green)}
+.opt p{color:#b6bfb2;margin:0 0 24px}
+.opt ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.opt li{display:flex;gap:10px;align-items:flex-start;color:#dfe5dc}
+.opt li:before{content:"✓";color:var(--green);font-weight:800}
+.ptable{background:#fff;color:var(--ink);border-radius:20px;overflow:hidden;position:relative;z-index:1}
+.ptable table{width:100%;border-collapse:collapse;font-size:14px}
+.ptable th{background:var(--bg);font-weight:800;text-align:right;padding:12px 14px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.ptable th:first-child,.ptable td:first-child{text-align:left}
+.ptable td{padding:11px 14px;border-top:1px solid var(--line);text-align:right;font-weight:700;white-space:nowrap}
+.ptable td:first-child{font-weight:600;white-space:normal}
+.ptable td.best{color:var(--green-d)}
+.ptable .note{padding:12px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+
+/* ---------- steps & contacts ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.step .n{font-family:Oswald,Impact,sans-serif;font-size:44px;color:var(--green);line-height:1;font-weight:600}
+.step b{display:block;margin:10px 0 6px;font-size:17px}
+.step span{color:var(--muted);font-size:14px}
+.contacts{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
+.cbox{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cbox small{display:block;color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.cbox a,.cbox span{font-size:18px;font-weight:800;text-decoration:none}
+.callbox{background:var(--green);color:#fff;border-radius:var(--r);padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.callbox h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:32px;line-height:1.05;margin:0;font-weight:700}
+.callbox p{margin:0;color:#e3f6df}
+.callbox .btn{background:#fff;color:var(--ink);align-self:flex-start}
+footer{margin-top:72px;background:var(--ink);color:#8d968a;padding:40px 0;font-size:13px}
+footer .wrap{display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+footer img{height:40px}
+
+/* ---------- overlays ---------- */
+.ov{position:fixed;inset:0;z-index:60;background:rgba(10,12,9,.6);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:16px;opacity:0;transition:opacity .2s}
+.ov.show{display:flex;opacity:1}
+.modal{background:#fff;border-radius:24px;width:100%;max-width:580px;max-height:92vh;overflow:auto;padding:32px;position:relative;animation:pop .25s ease}
+@keyframes pop{from{transform:translateY(10px) scale(.98);opacity:0}}
+.x{position:absolute;top:16px;right:16px;border:0;background:var(--bg);width:38px;height:38px;border-radius:50%;font-size:18px}
+.modal h2{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:32px;margin:0 0 6px;font-weight:700;line-height:1.05}
+.modal .sub{color:var(--muted);margin:0}
+.welcome{max-width:720px;padding:0;overflow:hidden}
+.welcome .top{background:var(--ink);color:#fff;padding:30px 32px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.welcome .top img{height:46px}
+.welcome .top h2{margin:0;font-size:30px}
+.welcome .top p{margin:6px 0 0;color:#aab3a6}
+.choose{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:26px 32px 32px}
+.choose button{border:2px solid var(--line);background:#fff;border-radius:20px;padding:24px;text-align:left;transition:.15s;display:flex;flex-direction:column;gap:6px}
+.choose button:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:var(--shadow)}
+.choose .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--bg);margin-bottom:6px}
+.choose .w .ico{background:var(--green-l);color:var(--green-d)}
+.choose b{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:28px;line-height:1}
+.choose span{color:var(--muted);font-size:14px}
+.choose em{font-style:normal;font-weight:800;font-size:13px;margin-top:8px;color:var(--ink)}
+.choose .w em{color:var(--green-d)}
+
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;z-index:61;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.drawer.show{transform:none}
+.drawer header{position:static;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line);backdrop-filter:none}
+.drawer header h2{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;margin:0;font-size:28px}
+.drawer .x{position:static}
+.lines{flex:1;overflow:auto;padding:8px 24px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.line img{width:64px;height:80px;object-fit:cover;border-radius:10px}
+.line .t{font-weight:700;font-size:14.5px;line-height:1.3}
+.line .t small{display:block;color:var(--muted);font-weight:600;font-size:12.5px;margin-top:2px}
+.line .r{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.line .r b{font-size:15px}
+.line .stepper button{width:30px;height:32px;font-size:16px}
+.line .stepper input{width:46px;font-size:13px}
+.rm{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;padding:0}
+.dfoot{padding:20px 24px 24px;border-top:1px solid var(--line)}
+.dtotal{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.dtotal b{font-family:Oswald,Impact,sans-serif;font-size:34px;font-weight:600}
+.empty{text-align:center;color:var(--muted);padding:60px 10px}
+.empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:4px}
+.primary{width:100%;border:0;border-radius:14px;background:var(--green);color:#fff;font-weight:800;padding:16px;font-size:16px;transition:background .15s}
+.primary:hover{background:var(--green-d)}
+.primary:disabled{opacity:.45;cursor:not-allowed}
+.warn{background:#fff4e8;color:#a24d00;padding:10px 12px;border-radius:10px;font-size:13.5px;margin-bottom:12px;font-weight:600}
+.summary{background:var(--bg);border-radius:14px;padding:14px 16px;margin:16px 0 4px;font-size:14px}
+.summary div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}.summary b{white-space:nowrap}
+.summary .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:9px;font-weight:800;font-size:16px}
+form label{display:block;font-size:13px;font-weight:700;color:#454b43;margin:14px 0 6px}
+form input,form textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;background:#fff;transition:border .15s}
+form input:focus,form textarea:focus{outline:0;border-color:var(--green)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hp{position:absolute;left:-9999px;opacity:0}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:16px 0;font-weight:500}
+.agree input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--green)}
+.err{color:#c0261b;font-size:14px;font-weight:600;min-height:20px;margin-bottom:8px}
+.pay-logos{display:flex;gap:8px;justify-content:center;margin-top:12px;color:var(--muted);font-size:12px;font-weight:700}
+.pay-logos span{border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.done{text-align:center}
+.done .ok{width:76px;height:76px;border-radius:50%;background:var(--green-l);color:var(--green);display:grid;place-items:center;margin:0 auto 14px;font-size:38px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 40px));visibility:hidden;pointer-events:none;width:max-content;max-width:calc(100% - 32px);background:var(--ink);color:#fff;padding:14px 20px;border-radius:14px;font-weight:700;z-index:70;transition:transform .3s;display:flex;gap:12px;align-items:center;box-shadow:var(--shadow)}
+.toast.show{transform:translate(-50%,0);visibility:visible;pointer-events:auto}
+.toast button{border:0;background:var(--green);color:#fff;border-radius:10px;padding:7px 12px;font-weight:800}
+
+@media (max-width:1020px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{grid-template-columns:1fr}
+  .collage{height:380px;max-width:560px}
+  .opt{grid-template-columns:1fr;padding:32px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .contacts{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:repeat(2,1fr)}
+  nav{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .bar{height:64px;gap:10px}
+  .brand img{height:34px}
+  .seg button{padding:7px 11px;font-size:13px}
+  .cart-btn{padding:0 12px}
+  .cart-btn .lbl-txt{display:none}
+  .grid{grid-template-columns:1fr}
+  .hero .wrap{padding-top:44px;padding-bottom:56px}
+  .collage{height:300px}
+  .sticker{width:96px;height:96px}.sticker b{font-size:26px}
+  .choose{grid-template-columns:1fr;padding:20px}
+  .welcome .top{padding:24px 20px}.welcome .top img{display:none}
+  .row2,.cbox{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:1fr}
+  .modal{padding:24px 20px}
+  .ptable{overflow-x:auto}
+}
+
+/* ---------- телефон ---------- */
+.mbar{display:none}
+@media (max-width:640px){
+  html{-webkit-text-size-adjust:100%}
+  body{padding-bottom:calc(env(safe-area-inset-bottom) + 0px)}
+  body.has-cart{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  .hero h1{font-size:44px;margin:16px 0 12px}
+  .hero p.lead{font-size:16px;margin-bottom:22px}
+  .cta .btn{flex:1;justify-content:center;padding:14px 16px;font-size:15px}
+  .facts{gap:18px;margin-top:28px}
+  .facts b{font-size:24px}
+  .collage{height:230px;margin-top:6px}
+  .collage .c1{width:52%;height:92%}
+  .collage .c2{width:42%;height:76%}
+  .collage .c3{width:40%;height:68%}
+  .strip .wrap{grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+  .strip div{font-size:13px;gap:8px;align-items:flex-start}
+  .strip svg{flex-basis:32px;height:32px;padding:7px;border-radius:9px}
+  .strip small{display:none}
+  section{padding-top:48px}
+  .sec-head{margin-bottom:16px}
+  .sec-head h2{font-size:36px}
+  .mode-note{width:100%;justify-content:space-between}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 16px;padding:0 16px 4px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:0 0 auto}
+  .grid{gap:16px}
+  .pic{aspect-ratio:4/3}
+  .pic img{object-position:50% 72%}
+  .body{padding:16px;gap:12px}
+  .body .desc{font-size:13.5px}
+  .packs{grid-template-columns:repeat(4,1fr);gap:6px}
+  .pack{padding:8px 2px}
+  .pack b{font-size:14px}
+  .pack small{font-size:11px}
+  .tier{padding:7px 4px}
+  .stepper input,form input,form textarea{font-size:16px}
+  .stepper button{width:42px}
+  .add{height:50px}
+  .opt{padding:26px 20px;border-radius:22px}
+  .ptable td,.ptable th{padding:9px 8px;font-size:12.5px}
+  .step{padding:18px}
+  .step .n{font-size:34px}
+  .cbox{padding:22px}
+  .callbox{padding:24px}
+  .callbox .btn{align-self:stretch;justify-content:center}
+  footer{margin-top:48px}
+  /* окно выбора */
+  .ov{padding:12px;align-items:flex-end}
+  .welcome{border-radius:22px}
+  .welcome .top{padding:22px 20px 18px}
+  .welcome .top h2{font-size:26px}
+  .welcome .top p{font-size:14px}
+  .choose{gap:10px;padding:16px}
+  .choose button{flex-direction:row;flex-wrap:wrap;align-items:center;padding:16px;gap:4px 14px;border-radius:16px}
+  .choose .ico{width:46px;height:46px;margin:0;flex:0 0 46px}
+  .choose b{font-size:24px;flex:1}
+  .choose span{flex:0 0 100%;font-size:13.5px}
+  .choose em{margin-top:2px}
+  .modal{max-height:calc(100dvh - 24px);border-radius:22px}
+  .modal h2{font-size:28px}
+  /* корзина на весь экран */
+  .drawer{height:100dvh;width:100%}
+  .drawer header{padding:16px 20px}
+  .lines{padding:4px 20px}
+  .line{grid-template-columns:56px 1fr;grid-template-areas:"img t" "img r"}
+  .line img{grid-area:img;width:56px;height:72px}
+  .line .t{grid-area:t}
+  .line .r{grid-area:r;flex-direction:row;align-items:center;justify-content:space-between}
+  .dfoot{padding:16px 20px calc(16px + env(safe-area-inset-bottom))}
+  /* нижняя панель «корзина» */
+  .mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--ink);color:#fff;border:0;border-radius:16px;padding:12px 14px 12px 18px;box-shadow:0 12px 30px -8px rgba(0,0,0,.45);font-weight:700}
+  body.has-cart .mbar{display:flex}
+  .mbar small{display:block;color:#a9b2a5;font-size:12px;font-weight:600}
+  .mbar b{font-family:Oswald,Impact,sans-serif;font-size:22px;font-weight:600}
+  .mbar span.go{background:var(--green);border-radius:12px;padding:10px 14px;font-size:14px}
+  .toast{bottom:calc(92px + env(safe-area-inset-bottom))}
+  .toast button{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Строй Пласт — на главную"><img src="logo.svg" alt="Строй Пласт"></a>
+    <nav><a href="#catalog">Каталог</a><a href="#opt">Оптом</a><a href="#how">Как заказать</a><a href="#contacts">Контакты</a></nav>
+    <div class="spacer"></div>
+    <div class="seg" role="tablist" aria-label="Тип покупки">
+      <button data-mode="retail" role="tab">Розница</button>
+      <button data-mode="wholesale" role="tab">Опт</button>
+    </div>
+    <button class="cart-btn" id="openCart" aria-label="Корзина">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>
+      <span class="lbl-txt">Корзина</span><span class="cnt" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Производство в России</span>
+      <h1 class="display">Вёдра, которые<br><span>выдержат стройку</span></h1>
+      <p class="lead">Строительные, хозяйственные и ударопрочные вёдра 12 и 16 литров. Мерная линейка внутри, металлическая ручка, прочный пластик. Продаём поштучно и оптом с доставкой.</p>
+      <div class="cta">
+        <a class="btn btn-green" href="#catalog">Каталог →</a>
+        <a class="btn btn-ghost" href="#opt">Оптовый прайс</a>
+      </div>
+      <div class="facts">
+        <div><b>от 151 ₽</b>за ведро в комплекте</div>
+        <div><b>12 и 16 л</b>ходовые объёмы</div>
+        <div><b>до −30%</b>оптовые цены</div>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <figure class="c2"><img src="img/ud12_green.jpg" alt=""></figure>
+      <figure class="c1"><img src="img/b12_1.jpg" alt=""></figure>
+      <figure class="c3"><img src="img/w16_1.jpg" alt=""></figure>
+      <div class="sticker"><div><b>10 шт</b><span>выгоднее<br>комплектом</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V5l8-3 8 3v16"/><path d="M9 21v-6h6v6"/></svg><div>Сделано в России<small>Собственное производство</small></div></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg><div>Ударопрочный пластик<small>Не трескается на морозе</small></div></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18M6 7h4M6 11h3M6 15h4M6 19h3"/><path d="M14 3h4v18h-4z"/></svg><div>Мерная линейка<small>Точно отмерить раствор</small></div></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg><div>Доставка по России<small>Отгрузка со склада</small></div></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="catalog">
+    <div class="sec-head">
+      <div>
+        <h2 class="display">Каталог</h2>
+        <p id="catalogSub">Выберите цвет и комплект — цена пересчитается сразу.</p>
+      </div>
+      <div class="mode-note" id="modeNote"></div>
+    </div>
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">Все</button>
+      <button data-f="12">12 литров</button>
+      <button data-f="16">16 литров</button>
+      <button data-f="impact">Ударопрочные</button>
+      <button data-f="planter">Для кашпо</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="opt">
+    <div class="opt">
+      <div>
+        <h2 class="display">Оптом — <span>дешевле<br>до 30%</span></h2>
+        <p>Для строительных компаний, магазинов, складов и маркетплейсов. Чем больше партия, тем ниже цена за штуку.</p>
+        <ul>
+          <li>Минимальная партия — от 50 шт. одной позиции</li>
+          <li>Работаем с ИП и юрлицами, выставляем счёт, закрывающие документы</li>
+          <li>Можно смешивать цвета внутри одной модели</li>
+          <li>Отгрузка на транспортную компанию или самовывоз со склада</li>
+        </ul>
+        <button class="btn btn-green" data-switch="wholesale" data-go="catalog">Перейти к оптовым ценам →</button>
+      </div>
+      <div class="ptable">
+        <table id="ptable"></table>
+        <div class="note">Цена за 1 шт., ₽. Для партий от 1000 шт. — индивидуальные условия.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-head"><div><h2 class="display">Как заказать</h2><p>Четыре шага — и заказ уже у продавца.</p></div></div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><b>Опт или розница</b><span>Выберите тип покупки — от этого зависят цены.</span></div>
+      <div class="step"><div class="n">02</div><b>Соберите корзину</b><span>Модель, цвет и количество. Комплекты выгоднее.</span></div>
+      <div class="step"><div class="n">03</div><b>Укажите адрес</b><span>Контакты и адрес доставки сразу уходят продавцу.</span></div>
+      <div class="step"><div class="n">04</div><b>Оплатите онлайн</b><span>Картой или по СБП. Подтверждение придёт на почту.</span></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="sec-head"><div><h2 class="display">Контакты</h2></div></div>
+    <div class="contacts">
+      <div class="cbox">
+        <div><small>Телефон</small><a id="cPhone" href="tel:+79000000000">+7 (900) 000-00-00</a></div>
+        <div><small>E-mail</small><a id="cEmail" href="mailto:info@stroyplast.ru">info@stroyplast.ru</a></div>
+        <div><small>Склад и самовывоз</small><span id="cAddress">г. Москва, ул. Складская, 1</span></div>
+        <div><small>Часы работы</small><span id="cHours">Пн–Пт 9:00–18:00</span></div>
+      </div>
+      <div class="callbox">
+        <div><h3>Нужна большая партия?</h3><p>Рассчитаем цену и доставку под ваш объём в течение часа.</p></div>
+        <a class="btn" id="cCall" href="tel:+79000000000">Позвонить менеджеру</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-white.svg" alt="Строй Пласт">
+    <div>© <span id="year"></span> Строй Пласт. Цены указаны в рублях с учётом НДС.<br>Оформляя заказ, вы соглашаетесь с политикой обработки персональных данных.</div>
+  </div>
+</footer>
+
+<!-- выбор: опт / розница -->
+<div class="ov" id="welcome">
+  <div class="modal welcome">
+    <div class="top">
+      <div><h2>Как хотите купить?</h2><p>От этого зависят цены. Переключить можно в любой момент вверху.</p></div>
+      <img src="logo-white.svg" alt="">
+    </div>
+    <div class="choose">
+      <button class="r" data-pick="retail">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></div>
+        <b>В розницу</b><span>Для себя, дачи или ремонта — от 1 штуки и комплектами по 3, 5, 10.</span><em>Купить поштучно →</em>
+      </button>
+      <button class="w" data-pick="wholesale">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></div>
+        <b>Оптом</b><span>Для бизнеса — от 50 штук, счёт для юрлиц, цена ниже до 30%.</span><em>Смотреть оптовые цены →</em>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- корзина -->
+<div class="ov" id="cartOv"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <header><h2>Корзина</h2><button class="x" data-close-cart aria-label="Закрыть">✕</button></header>
+  <div class="lines" id="lines"></div>
+  <div class="dfoot">
+    <div id="cartWarn"></div>
+    <div class="dtotal"><span id="cartKind" style="color:var(--muted);font-weight:700"></span><b id="cartTotal">0 ₽</b></div>
+    <button class="primary" id="toCheckout">Оформить заказ</button>
+  </div>
+</aside>
+
+<!-- оформление -->
+<div class="ov" id="checkout">
+  <div class="modal">
+    <button class="x" data-close aria-label="Закрыть">✕</button>
+    <h2>Оформление</h2>
+    <p class="sub" id="coKind"></p>
+    <div class="summary" id="coSummary"></div>
+    <form id="orderForm" novalidate>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div id="bizFields">
+        <div class="row2">
+          <div><label>Организация / ИП *</label><input name="company" autocomplete="organization" placeholder="ООО «Ромашка»"></div>
+          <div><label>ИНН</label><input name="inn" inputmode="numeric" maxlength="12"></div>
+        </div>
+      </div>
+      <label>Имя и фамилия *</label><input name="name" autocomplete="name" placeholder="Иван Петров">
+      <div class="row2">
+        <div><label>Телефон *</label><input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+        <div><label>E-mail *</label><input name="email" type="email" autocomplete="email" placeholder="для подтверждения заказа"></div>
+      </div>
+      <div class="row2">
+        <div><label>Город *</label><input name="city" autocomplete="address-level2"></div>
+        <div><label>Индекс</label><input name="zip" inputmode="numeric" maxlength="6" autocomplete="postal-code"></div>
+      </div>
+      <label>Адрес доставки *</label><input name="address" autocomplete="street-address" placeholder="Улица, дом, квартира / офис">
+      <label>Комментарий</label><textarea name="comment" rows="2" placeholder="Удобное время, этаж, нужна ли разгрузка…"></textarea>
+      <label class="agree"><input type="checkbox" name="agree"> Я согласен(на) на обработку персональных данных для выполнения заказа</label>
+      <div class="err" id="formErr"></div>
+      <button class="primary" type="submit" id="payBtn">Перейти к оплате</button>
+      <div class="pay-logos"><span>МИР</span><span>Visa</span><span>Mastercard</span><span>СБП</span><span>ЮKassa</span></div>
+    </form>
+  </div>
+</div>
+
+<!-- успех (демо) -->
+<div class="ov" id="doneOv">
+  <div class="modal done">
+    <div class="ok">✓</div>
+    <h2 id="doneTitle">Заказ оформлен</h2>
+    <p class="sub" id="doneText"></p>
+    <button class="primary" data-close style="margin-top:20px">Вернуться в каталог</button>
+  </div>
+</div>
+
+<button class="mbar" id="mbar"><div><small id="mbarCnt"></small><b id="mbarSum"></b></div><span class="go">Оформить →</span></button>
+<div class="toast" id="toast"><span id="toastText"></span><button id="toastBtn">В корзину</button></div>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const rub = n => new Intl.NumberFormat('ru-RU').format(Math.round(n)) + ' ₽';
+const store = {
+  get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+const plural = (n, a, b, c) => { n = Math.abs(n) % 100; const m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; };
+
+const FALLBACK_CATALOG = { "wholesaleTiers": [50, 100, 300], "wholesaleMinQty": 50, "products": [ { "id": "build-12", "name": "Ведро строительное 12 л", "category": "12", "badge": "Хит продаж", "description": "Прочный пластик, металлическая ручка с удобной рукояткой, мерная линейка внутри. Для раствора, воды, сада и хозяйства.", "features": ["12 литров", "Мерная линейка", "Сделано в России"], "colors": [ { "id": "black", "name": "Чёрное", "hex": "#1d1f20", "packs": [ { "qty": 1, "price": 623, "img": "img/b12_1.jpg" }, { "qty": 3, "price": 737, "img": "img/b12_3.jpg" }, { "qty": 5, "price": 1252, "img": "img/b12_5.jpg" }, { "qty": 10, "price": 1509, "img": "img/b12_10.jpg" } ], "wholesale": [129, 119, 109] }, { "id": "green", "name": "Тёмно-зелёное", "hex": "#4f5d4a", "packs": [ { "qty": 1, "price": 650, "img": "img/g12_1.jpg" }, { "qty": 3, "price": 964, "img": "img/g12_3.jpg" }, { "qty": 5, "price": 1380, "img": "img/g12_5.jpg" }, { "qty": 10, "price": 1650, "img": "img/g12_10.jpg" } ], "wholesale": [139, 129, 119] }, { "id": "khaki", "name": "Хаки", "hex": "#7d776a", "packs": [ { "qty": 10, "price": 2103, "img": "img/k12_10.jpg" } ], "wholesale": [149, 139, 129] } ] }, { "id": "build-16", "name": "Ведро строительное 16 л", "category": "16", "badge": "Выгодно комплектом", "description": "Увеличенный объём, ударопрочный ABS-пластик. Универсальное применение — стройка, дача, склад.", "features": ["16 литров", "Ударопрочный ABS", "Сделано в России"], "colors": [ { "id": "green", "name": "Тёмно-зелёное", "hex": "#4f5d4a", "packs": [ { "qty": 1, "price": 622, "img": "img/g16_1.jpg" }, { "qty": 10, "price": 2089, "img": "img/g16_10.jpg" } ], "wholesale": [179, 165, 149] } ] }, { "id": "home-16", "name": "Ведро хозяйственное 16 л", "category": "16", "badge": "", "description": "Светлое ведро для дома и сада: уборка, вода, урожай. Ударопрочный материал, металлическая ручка.", "features": ["16 литров", "Ударопрочный ABS", "Для дома и сада"], "colors": [ { "id": "white", "name": "Белое", "hex": "#e6e0d6", "packs": [ { "qty": 1, "price": 727, "img": "img/w16_1.jpg" } ], "wholesale": [189, 175, 159] } ] }, { "id": "impact-12", "name": "Ведро ударопрочное 12 л", "category": "impact", "badge": "Новинка", "description": "Эргономичная форма с выемкой: удобно наливать и выливать, легко нести. Выдерживает удары и мороз.", "features": ["12 литров", "Эргономичная форма", "Морозостойкое"], "colors": [ { "id": "grey", "name": "Серое", "hex": "#8c9399", "packs": [ { "qty": 1, "price": 673, "img": "img/ud12_grey.jpg" } ], "wholesale": [239, 219, 199] }, { "id": "lime", "name": "Салатовое", "hex": "#8fd61f", "packs": [ { "qty": 1, "price": 758, "img": "img/ud12_green.jpg" } ], "wholesale": [249, 229, 209] } ] }, { "id": "impact-16", "name": "Ведро ударопрочное 16 л", "category": "impact", "badge": "", "description": "Большая версия эргономичного ведра. Комплект из трёх штук.", "features": ["16 литров", "Эргономичная форма", "3 шт. в комплекте"], "colors": [ { "id": "lime", "name": "Салатовое", "hex": "#8fd61f", "packs": [ { "qty": 3, "price": 1301, "img": "img/ud16_3.jpg" } ], "wholesale": [329, 299, 279] } ] }, { "id": "planter-16", "name": "Основа для кашпо 16 л", "category": "planter", "badge": "", "description": "Плотный чёрный пластик — основа для напольных кашпо и вазонов, оплетения ротангом, джутом.", "features": ["16 литров", "Для кашпо", "3 шт. в комплекте"], "colors": [ { "id": "black", "name": "Чёрная", "hex": "#1d1f20", "packs": [ { "qty": 3, "price": 784, "img": "img/kashpo16_3.jpg" } ], "wholesale": [199, 185, 169] } ] } ] };
+let CAT = FALLBACK_CATALOG;
+let demo = true, paymentsEnabled = true;
+let mode = store.get('sp_mode', null);
+let carts = store.get('sp_carts', { retail: {}, wholesale: {} });
+let filter = 'all';
+const sel = {}; // выбор в карточке: { [pid]: { color, pack, count, qty } }
+
+/* ---------- данные ---------- */
+const P = id => CAT.products.find(p => p.id === id);
+const C = (p, cid) => p.colors.find(c => c.id === cid) || p.colors[0];
+function tierIndex(qty) { const t = CAT.wholesaleTiers; let i = -1; t.forEach((v, k) => { if (qty >= v) i = k; }); return i; }
+function wPrice(color, qty) { const i = Math.max(0, tierIndex(qty)); return color.wholesale[i]; }
+function minUnit(p) { return Math.min(...p.colors.flatMap(c => c.packs.map(k => k.price / k.qty))); }
+function cart() { return carts[mode || 'retail']; }
+function saveCart() { store.set('sp_carts', carts); }
+
+async function init() {
+  $('#year').textContent = new Date().getFullYear();
+  try {
+    const r = await fetch('products.json'); if (!r.ok) throw 0; CAT = await r.json();
+  } catch { CAT = FALLBACK_CATALOG; }
+  try {
+    const r = await fetch('/api/config'); if (!r.ok) throw 0;
+    const cfg = await r.json(); demo = false; paymentsEnabled = cfg.paymentsEnabled; applyContacts(cfg.contacts || {});
+  } catch { demo = true; }
+  CAT.products.forEach(p => { const c = p.colors[0]; sel[p.id] = { color: c.id, pack: c.packs[0].qty, count: 1, qty: CAT.wholesaleMinQty }; });
+  if (!paymentsEnabled) $('#payBtn').textContent = 'Отправить заказ';
+  if (!mode) open('#welcome');
+  renderTable(); render();
+}
+
+function applyContacts(k) {
+  const tel = s => 'tel:' + s.replace(/[^\d+]/g, '');
+  if (k.phone) { $('#cPhone').textContent = k.phone; $('#cPhone').href = tel(k.phone); $('#cCall').href = tel(k.phone); }
+  if (k.email) { $('#cEmail').textContent = k.email; $('#cEmail').href = 'mailto:' + k.email; }
+  if (k.address) $('#cAddress').textContent = k.address;
+  if (k.hours) $('#cHours').textContent = k.hours;
+}
+
+/* ---------- отрисовка ---------- */
+function setMode(m) { mode = m; store.set('sp_mode', m); render(); }
+
+function render() {
+  const w = mode === 'wholesale';
+  $$('.seg button').forEach(b => b.classList.toggle('on', b.dataset.mode === (mode || 'retail')));
+  const note = $('#modeNote');
+  note.className = 'mode-note ' + (w ? 'wholesale' : 'retail');
+  note.innerHTML = w ? '📦 Оптовые цены · от ' + CAT.wholesaleMinQty + ' шт. <button data-switch="retail">В розницу</button>'
+                     : '🛒 Розничные цены <button data-switch="wholesale">Хочу оптом</button>';
+  $('#catalogSub').textContent = w ? 'Цена за штуку снижается с ростом партии. Укажите количество — сумма пересчитается.' : 'Выберите цвет и комплект — цена пересчитается сразу.';
+  $$('#filters button').forEach(b => b.classList.toggle('on', b.dataset.f === filter));
+  const list = CAT.products.filter(p => filter === 'all' || p.category === filter);
+  $('#grid').innerHTML = list.map(card).join('');
+  updateCount();
+}
+
+function card(p) {
+  const s = sel[p.id], c = C(p, s.color), w = mode === 'wholesale';
+  const pack = c.packs.find(k => k.qty === s.pack) || c.packs[0];
+  const img = pack.img;
+  const swatches = `<div><div class="lbl">Цвет</div><div class="swatches">${p.colors.map(x =>
+      `<button class="sw ${x.id === c.id ? 'on' : ''}" style="background:${x.hex}" data-color="${x.id}" title="${x.name}" aria-label="${x.name}"></button>`).join('')}
+      <span class="sw-name">${c.name}</span></div></div>`;
+  let middle, foot;
+  if (!w) {
+    const single = c.packs.find(k => k.qty === 1);
+    middle = `<div><div class="lbl">Комплект</div><div class="packs">${c.packs.map(k => {
+        const per = k.price / k.qty, save = single && k.qty > 1 ? Math.round((1 - per / single.price) * 100) : 0;
+        return `<button class="pack ${k.qty === pack.qty ? 'on' : ''}" data-pack="${k.qty}"><b>${k.qty} шт</b><small>${rub(k.price)}</small>${save > 0 ? `<span class="save">−${save}%</span>` : ''}</button>`;
+      }).join('')}</div></div>`;
+    foot = `<div class="priceline"><span class="big">${rub(pack.price * s.count)}</span><span class="per">${pack.qty > 1 ? rub(pack.price / pack.qty) + ' / шт' : ''}</span></div>
+      <div class="buyrow">
+        <div class="stepper"><button data-step="-1" aria-label="Меньше">−</button><input data-count type="number" min="1" value="${s.count}" aria-label="Количество комплектов"><button data-step="1" aria-label="Больше">+</button></div>
+        <button class="add" data-add>В корзину</button>
+      </div>${s.count > 1 ? `<div class="hint">${s.count} ${plural(s.count, 'комплект', 'комплекта', 'комплектов')} × ${pack.qty} шт = ${s.count * pack.qty} шт</div>` : ''}`;
+  } else {
+    const ti = Math.max(0, tierIndex(s.qty)), unit = c.wholesale[ti], t = CAT.wholesaleTiers;
+    middle = `<div><div class="lbl">Цена за штуку</div><div class="tiers">${t.map((v, i) =>
+        `<div class="tier ${i === ti ? 'on' : ''}"><small>от ${v} шт</small><b>${rub(c.wholesale[i])}</b></div>`).join('')}</div></div>`;
+    const next = ti < t.length - 1 ? `Ещё ${t[ti + 1] - s.qty} шт — и цена ${rub(c.wholesale[ti + 1])}/шт` : 'Лучшая оптовая цена';
+    foot = `<div class="priceline"><span class="big">${rub(unit * s.qty)}</span><span class="per">${rub(unit)} / шт</span></div>
+      <div class="buyrow">
+        <div class="stepper"><button data-step="-10" aria-label="Меньше">−</button><input data-qty type="number" min="${CAT.wholesaleMinQty}" step="10" value="${s.qty}" aria-label="Количество, шт"><button data-step="10" aria-label="Больше">+</button></div>
+        <button class="add" data-add>В корзину</button>
+      </div><div class="hint">${next}</div>`;
+  }
+  const badge = p.badge ? `<span class="badge ${p.badge === 'Новинка' ? 'alt' : ''}">${p.badge}</span>` : '';
+  return `<article class="card" data-id="${p.id}">
+    <div class="pic"><img src="${img}" alt="${p.name}, ${c.name.toLowerCase()}"></div>
+    <div class="body">
+      ${badge}<h3>${p.name}</h3>
+      <p class="desc">${p.description}</p>
+      <div class="feats">${p.features.map(f => `<span>${f}</span>`).join('')}</div>
+      ${swatches}${middle}
+      <div class="foot">${foot}</div>
+    </div></article>`;
+}
+
+function renderTable() {
+  const t = CAT.wholesaleTiers;
+  const rows = CAT.products.flatMap(p => p.colors.map(c => ({ n: p.name.replace('Ведро ', '') + (p.colors.length > 1 ? ', ' + c.name.toLowerCase() : ''), w: c.wholesale })));
+  $('#ptable').innerHTML = `<tr><th>Позиция</th>${t.map(v => `<th>от ${v}</th>`).join('')}</tr>` +
+    rows.map(r => `<tr><td>${r.n}</td>${r.w.map((v, i) => `<td class="${i === r.w.length - 1 ? 'best' : ''}">${v}</td>`).join('')}</tr>`).join('');
+}
+
+/* ---------- корзина ---------- */
+function lineInfo(key, val) {
+  const [pid, cid, kind] = key.split('|'); const p = P(pid); if (!p) return null; const c = C(p, cid);
+  if (kind === 'w') { const unit = wPrice(c, val); return { key, p, c, img: c.packs[0].img, title: p.name, sub: `${c.name} · ${rub(unit)}/шт`, qty: val, sum: unit * val, w: true }; }
+  const packQty = +kind.slice(1), pack = c.packs.find(k => k.qty === packQty); if (!pack) return null;
+  return { key, p, c, img: pack.img, title: p.name, sub: `${c.name} · комплект ${packQty} шт · ${rub(pack.price)}`, qty: val, sum: pack.price * val, w: false, packQty };
+}
+const lines = () => Object.entries(cart()).map(([k, v]) => lineInfo(k, v)).filter(Boolean);
+const total = () => lines().reduce((s, l) => s + l.sum, 0);
+function problems() {
+  if (mode !== 'wholesale') return [];
+  return lines().filter(l => l.qty < CAT.wholesaleMinQty).map(l => `«${l.title}» — оптом от ${CAT.wholesaleMinQty} шт`);
+}
+function updateCount() {
+  const n = lines().length; $('#cartCount').textContent = n;
+  document.body.classList.toggle('has-cart', n > 0);
+  $('#mbarCnt').textContent = n + ' ' + plural(n, 'позиция', 'позиции', 'позиций') + ' в корзине';
+  $('#mbarSum').textContent = rub(total());
+  if ($('#drawer').classList.contains('show')) renderCart();
+}
+function renderCart() {
+  const ls = lines(), w = mode === 'wholesale';
+  $('#lines').innerHTML = ls.length ? ls.map(l => `
+    <div class="line" data-key="${l.key}">
+      <img src="${l.img}" alt="">
+      <div class="t">${l.title}<small>${l.sub}</small></div>
+      <div class="r"><b>${rub(l.sum)}</b>
+        <div class="stepper"><button data-lstep="${l.w ? -10 : -1}">−</button><input data-lval type="number" value="${l.qty}"><button data-lstep="${l.w ? 10 : 1}">+</button></div>
+        <button class="rm" data-rm>Удалить</button></div>
+    </div>`).join('') : `<div class="empty"><b>Корзина пуста</b>Добавьте вёдра из каталога</div>`;
+  $('#cartWarn').innerHTML = problems().map(t => `<div class="warn">${t}</div>`).join('');
+  $('#cartKind').textContent = w ? 'Оптовый заказ' : 'Итого';
+  $('#cartTotal').textContent = rub(total());
+  $('#toCheckout').disabled = !ls.length || problems().length > 0;
+}
+function openCart() { $('#toast').classList.remove('show'); renderCart(); $('#drawer').classList.add('show'); $('#cartOv').classList.add('show'); }
+function closeCart() { $('#drawer').classList.remove('show'); $('#cartOv').classList.remove('show'); }
+function open(id) { $(id).classList.add('show'); }
+function close(el) { el.classList.remove('show'); }
+
+let toastT;
+function toast(text) {
+  $('#toastText').textContent = text; $('#toast').classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => $('#toast').classList.remove('show'), 2600);
+  const b = $('#openCart'); b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
+}
+
+/* ---------- события ---------- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('button,a,.ov') || e.target;
+  if (t.dataset?.mode) setMode(t.dataset.mode);
+  if (t.dataset?.switch) { setMode(t.dataset.switch); if (t.dataset.go) document.getElementById(t.dataset.go).scrollIntoView(); }
+  if (t.dataset?.pick) { setMode(t.dataset.pick); close($('#welcome')); }
+  if (t.dataset?.f) { filter = t.dataset.f; render(); }
+  if (t.hasAttribute?.('data-close')) close(t.closest('.ov'));
+  if (t.classList?.contains('ov') && e.target === t && t.id !== 'welcome') { if (t.id === 'cartOv') closeCart(); else close(t); }
+  if (t.hasAttribute?.('data-close-cart')) closeCart();
+
+  const cardEl = t.closest?.('.card');
+  if (cardEl) {
+    const p = P(cardEl.dataset.id), s = sel[p.id];
+    if (t.dataset.color) { s.color = t.dataset.color; const c = C(p, s.color); if (!c.packs.some(k => k.qty === s.pack)) s.pack = c.packs[0].qty; render(); }
+    if (t.dataset.pack) { s.pack = +t.dataset.pack; render(); }
+    if (t.dataset.step) {
+      if (mode === 'wholesale') s.qty = Math.max(CAT.wholesaleMinQty, s.qty + +t.dataset.step);
+      else s.count = Math.max(1, s.count + +t.dataset.step);
+      render();
+    }
+    if (t.hasAttribute('data-add')) {
+      const c = C(p, s.color), cr = cart();
+      if (mode === 'wholesale') { const k = `${p.id}|${c.id}|w`; cr[k] = (cr[k] || 0) + s.qty; toast(`${p.name}, ${c.name.toLowerCase()} — ${s.qty} шт добавлено`); }
+      else { const k = `${p.id}|${c.id}|p${s.pack}`; cr[k] = (cr[k] || 0) + s.count; toast(`${p.name}, ${c.name.toLowerCase()} — добавлено`); }
+      saveCart(); updateCount();
+    }
+  }
+  const line = t.closest?.('.line');
+  if (line) {
+    const k = line.dataset.key, cr = cart();
+    if (t.dataset.lstep) { cr[k] = Math.max(1, cr[k] + +t.dataset.lstep); }
+    if (t.hasAttribute('data-rm')) delete cr[k];
+    saveCart(); renderCart(); updateCount();
+  }
+});
+document.addEventListener('change', e => {
+  const t = e.target, cardEl = t.closest('.card');
+  if (cardEl) {
+    const s = sel[cardEl.dataset.id];
+    if (t.hasAttribute('data-count')) s.count = Math.max(1, Math.floor(+t.value) || 1);
+    if (t.hasAttribute('data-qty')) s.qty = Math.max(CAT.wholesaleMinQty, Math.floor(+t.value) || CAT.wholesaleMinQty);
+    render();
+  }
+  const line = t.closest('.line');
+  if (line && t.hasAttribute('data-lval')) { cart()[line.dataset.key] = Math.max(1, Math.floor(+t.value) || 1); saveCart(); renderCart(); updateCount(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeCart(); $$('.ov.show').forEach(o => o.id !== 'welcome' && close(o)); } });
+
+$('#openCart').onclick = openCart;
+$('#mbar').onclick = openCart;
+$('#toastBtn').onclick = () => { $('#toast').classList.remove('show'); openCart(); };
+$('#cartOv').onclick = closeCart;
+$('#toCheckout').onclick = () => {
+  closeCart();
+  const w = mode === 'wholesale';
+  $('#bizFields').style.display = w ? '' : 'none';
+  $('#coKind').textContent = w ? 'Оптовый заказ — продавец получит заявку и реквизиты.' : 'Розничный заказ. Стоимость доставки менеджер согласует отдельно.';
+  $('#coSummary').innerHTML = lines().map(l => `<div><span>${l.title}, ${l.c.name.toLowerCase()} · ${l.w ? l.qty + ' шт' : l.qty + ' × ' + l.packQty + ' шт'}</span><b>${rub(l.sum)}</b></div>`).join('') +
+    `<div class="tot"><span>Итого</span><span>${rub(total())}</span></div>`;
+  open('#checkout');
+};
+
+$('#orderForm').onsubmit = async e => {
+  e.preventDefault();
+  const f = e.target, err = $('#formErr'), btn = $('#payBtn'), w = mode === 'wholesale';
+  const d = Object.fromEntries(new FormData(f));
+  const need = (w ? ['company'] : []).concat(['name', 'phone', 'email', 'city', 'address']);
+  const miss = need.find(k => !String(d[k] || '').trim());
+  if (miss) { err.textContent = 'Заполните обязательные поля, отмеченные *'; f.elements[miss].focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { err.textContent = 'Проверьте e-mail — на него придёт подтверждение'; f.elements.email.focus(); return; }
+  if (String(d.phone).replace(/\D/g, '').length < 10) { err.textContent = 'Проверьте номер телефона'; f.elements.phone.focus(); return; }
+  if (!f.elements.agree.checked) { err.textContent = 'Отметьте согласие на обработку данных'; return; }
+  err.textContent = ''; btn.disabled = true; btn.textContent = 'Оформляем…';
+
+  const items = Object.entries(cart()).map(([k, v]) => {
+    const [product, color, kind] = k.split('|');
+    return kind === 'w' ? { product, color, qty: v } : { product, color, pack: +kind.slice(1), count: v };
+  });
+  const sum = total();
+  const finish = () => { carts[mode] = {}; saveCart(); updateCount(); };
+
+  if (demo) {
+    await new Promise(r => setTimeout(r, 700));
+    finish(); close($('#checkout'));
+    $('#doneTitle').textContent = 'Заказ оформлен';
+    $('#doneText').innerHTML = `Сумма ${rub(sum)}. Это демо-версия сайта: на рабочем сайте здесь откроется страница оплаты, продавец получит письмо с заказом и адресом доставки, а на <b>${d.email.replace(/[<>&]/g, '')}</b> придёт подтверждение.`;
+    open('#doneOv'); btn.disabled = false; btn.textContent = paymentsEnabled ? 'Перейти к оплате' : 'Отправить заказ'; f.reset();
+    return;
+  }
+  try {
+    const r = await fetch('/api/order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode, items, customer: d, website: d.website }) });
+    const out = await r.json();
+    if (!r.ok) throw new Error(out.error || 'Ошибка');
+    finish(); location.href = out.redirect;
+  } catch (x) {
+    err.textContent = x.message || 'Не удалось отправить заказ. Позвоните нам.';
+    btn.disabled = false; btn.textContent = paymentsEnabled ? 'Перейти к оплате' : 'Отправить заказ';
+  }
+};
+
+init();
+</script>
+</body>
+</html>
